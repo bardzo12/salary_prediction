@@ -1,0 +1,23 @@
+#Priklad pre najdenie podobnych jobov
+#Automatizovane cez python
+
+POST /salary_prediction/_search
+{
+   "_source": {
+        "includes": [ "job_title","job_salary"],
+        "excludes": [ "*.job_description" ]
+    },
+  "size" : 6,
+    "query": {
+        "more_like_this" : {
+            "fields" : ["job_title^5", "job_description"],
+            "like" : 
+            {
+                "doc" : {
+                    "job_title": "Sales Manager  Travel & Hospitality  Global consulting firm",
+                    "job_description": "Sales Manager  Travel & Hospitality  London [contact details removed]  Commission  Benefits THE ROLE My client is a Fortune **** Global consulting firm and looking to hire a Sales Manager for their Travel & Hospitality business unit. You will be responsible for new business development in the Travel & Hospitality vertical sector. This position will have a focus on winning new logos in UK & I. The goal will be to close 13 deals each year in order to achieve sales target. The typical deal size will be between 5 million to 50 million. You will develop and maintain business development campaigns and work with a Client Partner and team that will support all sales pursuits.  To ensure you achieve the quarterly and annual targets, across the mix of all of business to include the professional services and consulting lines of business  To open new clients within Travel & Hospitality  To promote and sell the portfolio of IT and consulting services  Develop indepth understanding of these products and related solutions  Achieve high customer satisfaction and references and case studies to support future sales.  Identifying prospective clients & creating the go to market plan for the identified territory & understanding of technology and the T&H industry vertical.  Knowledge of domain area in order to strategize & craft solutions (along with presales teams) to match customer needs is essential.  Generating business from campaigns and plans to penetrate competition accounts new accounts and build a platform to scale these into multimillion dollar engagements  Provide accurate information/reports to Head of Sales within agreed time scales  Liaise closely with the delivery team(s), to provide pre and postsales support and assistance to customers as required  Keep up to date with new supplier products and releases. Develop and manage excellent working partnerships with individual supplier Sales People (eg SAP, Oracle, Microsoft, Pega and other products relevant to the industry) THE CANDIDATE  Strong track record in opening and winning business at new clients accounts/logos and in winning new business in existing house accounts  Track record of success selling deals in the $1m to $20m TCV range  A successful track record in selling a broad IT service portfolio, encompassing consulting, applications development and maintenance, IT infrastructure services and BPO, into new accounts  Good knowledge of Travel & Hospitality market and key drivers  Experience with onsite/offshore model and working in a multicultural environment  Understanding of the selling life cycle including demonstrated ability to build/close a funnel/pipeline over an extended period  Comfortable and confident calling at the CIO, COO & CFO levels of target companies  Consultative sales style, creative thinking with a pragmatic approach  Results orientated and highly organized Apply with your updated CV for immediate interview or for more information contact Atif Khan."
+                  }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+GET /salary_prediction/_search
+{
+  "size" : 0,
+    "query" : {
+         "range" : {
+            "job_salary" : {
+                "gte" : 30000   #pre hladanie slov nad median   lte pre pod median
+            }
+        }
+    },
+    "aggregations" : {
+        "significant_description" : {
+            "significant_terms" : { 
+              "field" : "job_description",  #hladanie significant words pre description, mozny je aj job_title
+              "background_filter": {
+                        "range" : {
+                          "job_salary" : {
+                              "lte" : 30000   #Background filter musi byt opacny ako nastaveny rozsah hore
+                          }
+                      }
+                }
+            }
+        }
+    }
+}
