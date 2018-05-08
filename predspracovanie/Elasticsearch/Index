@@ -1,0 +1,23 @@
+{
+  "salary_prediction": {
+    "mappings": {
+      "jobs": {
+        "properties": {
+          "job_description": {
+            "type": "text",
+            "analyzer": "english",
+            "fielddata": true
+          },
+          "job_salary": {
+            "type": "integer"
+          },
+          "job_title": {
+            "type": "text",
+            "analyzer": "english",
+            "fielddata": true
+          }
+        }
+      }
+    }
+  }
+}
