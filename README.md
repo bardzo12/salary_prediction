@@ -17,3 +17,5 @@ Tento repozitár obsahuje výsledok práce na predmete Obajvovanie znalostí.
 **predspracovanie/Insert_Descriptions_to_elastic.py -** pomocný script pre elasticsearch
 
 **predspracovanie/Google-API-geocoding -** java program pre klastrovanie lokácií
+
+**predspracovanie/Elasticsearch/ -** Index a priklady Elasticsearch dopytov
