@@ -19,3 +19,10 @@ Tento repozitár obsahuje výsledok práce na predmete Obajvovanie znalostí.
 **predspracovanie/Google-API-geocoding -** java program pre klastrovanie lokácií
 
 **predspracovanie/Elasticsearch/ -** Index a priklady Elasticsearch dopytov
+
+**data/Train_cut.csv -** - nami upravená trenovacia množina (ukážka)
+
+**data/Train_rev1_cut.csv -** pôvodna trenovacia množina (ukážka)
+
+**Final.pdf -** dokumentácia projektu
+
